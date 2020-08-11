@@ -17,84 +17,56 @@ namespace CREATESQL
         {
             try
             {
+                //int pages = 5;
+
+                // zameen.pk data
+
                 //string gulshan_url = "https://www.zameen.com/Homes/Karachi_Gulshan_e_Iqbal-233-";
-                //int pages1 = 80;
-                // 2000
 
-                string johar_url = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
-                int pages2 = 110;
-                // 2800
+                //string johar_url = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
 
-                string bahria = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
-                int pages3 = 110;
-                // 6000
+                //string bahria_url = "https://www.zameen.com/Homes/Karachi_Bahria_Town_Karachi-8298-";
 
+                //string dha_url = "https://www.zameen.com/Homes/Karachi_DHA_Defence-213-";
 
-                string dha = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
-                int pages4 = 110;
-                // 4000
+                //string north_naz_url = "https://www.zameen.com/Homes/Karachi_North_Nazimabad-11-";
 
-                string gadap = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
-                int pages5 = 110;
-                // 2000
+                //string malir_url = "https://www.zameen.com/Homes/Karachi_Malir-476-";
 
-                string scheme_33 = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
-                int pages6 = 110;
-                // 1800
+                //string fb_area_url = "https://www.zameen.com/Homes/Karachi_Federal_B._Area-12-";
 
-                string north_naz = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
-                int pages7 = 110;
-                // 1800
+                //string korangi_url = "https://www.zameen.com/Homes/Karachi_Korangi-255-";
 
-                string malir = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
-                int pages8 = 110;
-                // 1000
+                //string clifton_url = "https://www.zameen.com/Homes/Karachi_Clifton-5-";
 
-                string cant = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
-                int pages9 = 110;
-                // 1000
+                //GetAsyncDataFromZameen(clifton_url, pages);
 
-                string fb_area = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
-                int pages10 = 110;
-                // 1200
+                // lamudi.pk data
+                int pages = 5;
 
-                string north_karachi = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
-                int pages11 = 110;
-                // 1000
+                string bahria_url = "https://www.prop.pk/karachi/houses-for-sale-in-bahria-town-karachi-8298/";
 
-                string jamshed_town = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
-                int pages12 = 110;
-                // 950
+                string gulshan_url = "https://www.prop.pk/karachi/houses-for-sale-in-gulshan-e-iqbal-town-6858/";
 
-                string korangi = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
-                int pages13 = 110;
-                // 950
+                string johar_url = "https://www.prop.pk/karachi/houses-for-sale-in-gulistan-e-jauhar-232/";
 
-                string clifton = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
-                int pages14 = 110;
-                // 800
+                string dha_url = "https://www.prop.pk/karachi/houses-for-sale-in-dha-defence-213/";
 
-                string nazimabad = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
-                int pages15 = 110;
-                // 600
+                string north_naz_url = "https://www.prop.pk/karachi/houses-for-sale-in-north-nazimabad-11/";
 
-                string mehmonabad = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
-                int pages16 = 110;
-                // 400
+                string malir_url = "https://www.prop.pk/karachi/houses-for-sale-in-malir-476/";
 
-                string liaquatabad = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
-                int pages17 = 110;
-                // 350
+                string fb_area_url = "https://www.prop.pk/karachi/houses-for-sale-in-federal-b-area-12/";
+        
+                string korangi_url = "https://www.prop.pk/karachi/houses-for-sale-in-korangi-255/";
 
-                string civil_lines = "https://www.zameen.com/Homes/Karachi_Gulistan_e_Jauhar-232-";
-                int pages18 = 110;
-                // 250
-
-                GetAsyncDataFromZameen(johar_url, pages18);
+                string clifton_url = "https://www.prop.pk/karachi/houses-for-sale-in-clifton-5/";
 
 
-              //  GetAsyncDataFromLamudi();
+                GetAsyncDataFromLamudi(clifton_url, pages);
+
             }
+
             catch (Exception ex)
             {
                 Console.WriteLine("Internet not working" + ex.Message);
@@ -183,7 +155,7 @@ namespace CREATESQL
 
                         Console.WriteLine(postdate);
 
-                        InsertDataInSql(price, location, area, postdate);
+                        // InsertDataInSql(price, location, area, postdate);
 
                         Console.WriteLine();
                     }
@@ -196,65 +168,69 @@ namespace CREATESQL
             }
         }
 
-        static async void GetAsyncDataFromLamudi()
+        static async void GetAsyncDataFromLamudi(string newurl,int pages)
         {
             try
             {
-                string url1 = "https://www.prop.pk/karachi/houses-for-sale-in-gulshan-e-iqbal-town-233/?price_max=100000000&area_max=1800";
-
-                var http = new HttpClient();
-                var html = await http.GetStringAsync(url1);
-
-                var htmldocument = new HtmlDocument();
-                htmldocument.LoadHtml(html);
-
-
-                var ProductList = htmldocument.DocumentNode.Descendants("ul")
-                   .Where(x => x.GetAttributeValue("id", "")
-                       .Equals("search_listing_section")).ToList();
-
-                var ProductListItems = ProductList[0].Descendants("li")
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("prop-card  clearfix white-bg")).ToList();
-
-
-
-                //Console.WriteLine("Product list total = {0}", ProductListItems.Count());
-                Console.WriteLine("============Data From Lamudi.pk=============");
-                Console.WriteLine();
-
-
-                foreach (var ProductListItem in ProductListItems)
+                for (int i = 1; i <= pages; i++)
                 {
-
-                    // price class = price-range
-                    string price = ProductListItem.Descendants("span")
-                         .Where(node => node.GetAttributeValue("class", "")
-                         .Contains("price-range")).FirstOrDefault().InnerText;
-                    Console.WriteLine(price);
-
-                    // location class = location d-inline-block
-                    string location = ProductListItem.Descendants("li")
-                         .Where(node => node.GetAttributeValue("class", "")
-                         .Contains("location d-inline-block")).FirstOrDefault().InnerText;
-                    Console.WriteLine(location);
-
-                    // area class = d-inline-block pointer-events-auto
-                    string area = ProductListItem.Descendants("li")
-                           .Where(node => node.GetAttributeValue("class", "")
-                           .Contains("d-inline-block pointer-events-auto")).FirstOrDefault().InnerText.Trim();
-                    Console.WriteLine(area);
+                    var url = newurl + i.ToString() + "/";
 
 
-                    // ad postdate class = potedt-date left
-                    string postdate = ProductListItem.Descendants("div")
-                              .Where(node => node.GetAttributeValue("class", "")
-                              .Equals("potedt-date left")).FirstOrDefault().InnerText;
-                    Console.WriteLine(postdate);
+                    var http = new HttpClient();
+                    var html = await http.GetStringAsync(url);
 
-                    InsertDataInSql(price, location, area, postdate);
+                    var htmldocument = new HtmlDocument();
+                    htmldocument.LoadHtml(html);
 
+
+                    var ProductList = htmldocument.DocumentNode.Descendants("ul")
+                       .Where(x => x.GetAttributeValue("id", "")
+                           .Equals("search_listing_section")).ToList();
+
+                    var ProductListItems = ProductList[0].Descendants("li")
+                        .Where(node => node.GetAttributeValue("class", "")
+                        .Equals("prop-card  clearfix white-bg")).ToList();
+
+
+
+                    //Console.WriteLine("Product list total = {0}", ProductListItems.Count());
+                    Console.WriteLine("============Data From Lamudi.pk=============");
                     Console.WriteLine();
+
+
+                    foreach (var ProductListItem in ProductListItems)
+                    {
+
+                        // price class = price-range
+                        string price = ProductListItem.Descendants("span")
+                             .Where(node => node.GetAttributeValue("class", "")
+                             .Contains("price-range")).FirstOrDefault().InnerText;
+                        Console.WriteLine(price);
+
+                        // location class = location d-inline-block
+                        string location = ProductListItem.Descendants("li")
+                             .Where(node => node.GetAttributeValue("class", "")
+                             .Contains("location d-inline-block")).FirstOrDefault().InnerText;
+                        Console.WriteLine(location);
+
+                        // area class = d-inline-block pointer-events-auto
+                        string area = ProductListItem.Descendants("li")
+                               .Where(node => node.GetAttributeValue("class", "")
+                               .Contains("d-inline-block pointer-events-auto")).FirstOrDefault().InnerText.Trim();
+                        Console.WriteLine(area);
+
+
+                        // ad postdate class = potedt-date left
+                        string postdate = ProductListItem.Descendants("div")
+                                  .Where(node => node.GetAttributeValue("class", "")
+                                  .Equals("potedt-date left")).FirstOrDefault().InnerText;
+                        Console.WriteLine(postdate);
+
+                        //InsertDataInSql(price, location, area, postdate);
+
+                        Console.WriteLine();
+                    }
                 }
             }
             catch (Exception ex)
